@@ -1,7 +1,7 @@
 import React from 'react';
 import { css } from '@patternfly/react-styles';
 import { Menu, MenuContent, MenuProps } from '../../../components/Menu';
-import { Popper } from '../../../helpers/Popper/Popper';
+import { Popper } from '../../../helpers';
 
 export interface DropdownProps extends MenuProps {
   /** Anything which can be rendered in a dropdown. */

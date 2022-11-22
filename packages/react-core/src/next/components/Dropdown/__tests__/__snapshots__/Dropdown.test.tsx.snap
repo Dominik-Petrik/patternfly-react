@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`match snapshot 1`] = `
+<DocumentFragment>
+  <div>
+    <div>
+      <div>
+        Dropdown
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`renders dropdown with custom class name 1`] = `
+<DocumentFragment>
+  <div>
+    <div>
+      <div>
+        Dropdown
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
