@@ -1,23 +1,23 @@
 import React from 'react';
-import { Dropdown, DropdownList, DropdownItem } from '@patternfly/react-core/dist/esm/next';
+import { Dropdown, DropdownList, DropdownItem } from '../../Dropdown';
 import { Popper } from '../../../../helpers/';
 import { render, screen, waitFor } from '@testing-library/react';
 
-jest.mock('../../../../helpers', () => ({
+/* jest.mock('../../../../helpers', () => ({
   Popper: ({ className }) => (
     <>
       <div data-testid="mock-popper">{`className: ${className}`}</div>
     </>
   )
-}));
+})); */
 
-/* jest.mock('../../../../components/Menu/', () => {
+jest.mock('../../../../components/Menu/', () => ({
   Menu: ({ className }) => (
     <>
       <div data-testid="mock-popper">{`className: ${className}`}</div>
     </>
-  );
-}); */
+  )
+}));
 
 const dropDownItems = (
   <DropdownList>
@@ -40,7 +40,7 @@ test('renders dropdown', async () => {
     </div>
   );
 
-  expect((await screen.findByTestId('dropdown')).children[0]).toBeVisible();
+  expect(await screen.findByTestId('dropdown')).toBeVisible();
 });
 
 test('renders dropdown with custom class name', async () => {
@@ -50,7 +50,7 @@ test('renders dropdown with custom class name', async () => {
     </Dropdown>
   );
 
-  expect((await screen.findByTestId('mock-popper')).children[0]).toHaveClass('customClass');
+  expect(await screen.findByTestId('mock-popper')).toHaveClass('customClass');
 });
 
 test('match snapshot', async () => {
